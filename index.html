@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+
+<script>
+	$(window).load(function(){  
+             $(".loading").fadeOut()
+            })  
+			
+    /****/
+    $(document).ready(function(){
+        var whei=$(window).width()
+        $("html").css({fontSize:whei/20})
+        $(window).resize(function(){
+            var whei=$(window).width()
+        $("html").css({fontSize:whei/20})
+        });
+    });
+</script>
+
+<body>
+    <header>
+        <h1> 数据可视化大作业 </h1>
+        <div class="showtime"></div>
+    </header>
+    <div class="loading">
+        <div class="loadbox"> <img src="picture/loading.gif"> <p>页面加载中...</p> </div>
+    </div>
+    <script src="js/showtime.js"></script>
+
+    <div class="mainbox">
+        <div class="column">
+            <div class="panel bar">
+                <h2>模块名称</h2>
+                <div class="chart"></div>
+            </div>
+            <div class="panel line">
+                <h2>模块名称</h2>
+                <div class="chart"></div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div id="map1"></div>
+        </div>
+        
+        <div class="column">
+            <div class="panel edu">
+                <h2>模块名称</h2>
+                <div id="pie"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/education_line_pie.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/map1.js"></script>
+    <script src="js/bar.js"></script>
+    <script src="js/flexible.js"></script>
+</body>
+</html>
