@@ -4,6 +4,16 @@ var option1;
 
 setTimeout(function () {
   option1 = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+    grid: {
+      show: false,
+      right: '10%'
+    },
     legend: {
         textStyle: {
             color: '#fff'
@@ -15,14 +25,17 @@ setTimeout(function () {
     },
     dataset: {
       source: [
-        ['product', '2012', '2013', '2014', '2015', '2016', '2017'],
-        ['Milk Tea', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
-        ['Matcha Latte', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
-        ['Cheese Cocoa', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
-        ['Walnut Brownie', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+        ['年份', '1964', '1982', '1990', '2000', '2010','2020'],
+        ['大专', 416, 615, 1422, 3611, 8930, 15467],
+        ['高中', 1391, 6779, 8039, 11146, 14032, 15088],
+        ['初中', 4680, 17892, 23344, 33961, 38788, 34507],
+        ['小学', 28330, 35237, 37057, 35701, 26779, 24767]
       ]
     },
     xAxis: [{ type: 'category',
+              axisTick: {
+                    alignWithLabel: true
+              },
                 axisLine: {
                     show: true,
                     lineStyle: {
@@ -43,6 +56,7 @@ setTimeout(function () {
     grid: { top: '55%' },
     series: [
       {
+        name: '大专',
         type: 'bar',
         stack: 'Ad',
         seriesLayoutBy: 'row',
@@ -50,17 +64,20 @@ setTimeout(function () {
       },
       {
         type: 'bar',
+        name: '高中',
         stack: 'Ad',
         seriesLayoutBy: 'row',
         emphasis: { focus: 'series' }
       },
       {
+        name: '初中',
         type: 'bar',
         stack: 'Ad',
         seriesLayoutBy: 'row',
         emphasis: { focus: 'series' }
       },
       {
+        name: '小学',
         type: 'bar',
         stack: 'Ad',
         seriesLayoutBy: 'row',
@@ -79,7 +96,7 @@ setTimeout(function () {
         emphasis: {
             label: {
               show: true,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: 'bold'
             }
         },
@@ -88,14 +105,14 @@ setTimeout(function () {
           },
         label: {
           show: false,
-          formatter: '{b}: {@2012} ({d}%)',
+          formatter: '{b}: {@2020} ({d}%)',
           position: 'center',
-          color: '#fff'
+          color: 'white'
         },
         encode: {
-          itemName: 'product',
-          value: '2012',
-          tooltip: '2012'
+          itemName: '年份',
+          value: '2020',
+          tooltip: '2020'
         }
       }
     ]

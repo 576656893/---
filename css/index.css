@@ -94,7 +94,7 @@ body .mainbox .column #map1 {
 }
 body .mainbox .column #line {
   height: 330px;
-  width: 500px;
+  width: 550px;
 }
 body .mainbox :nth-child(2) {
   flex: 5;

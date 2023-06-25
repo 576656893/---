@@ -9,6 +9,9 @@ option = {
     trigger: 'axis',
     axisPointer: {
       type: 'cross'
+    },
+    position: function (pt) {
+      return [pt[0], '10%'];
     }
   },
   grid: {
@@ -18,7 +21,7 @@ option = {
   legend: {
     orient:'horizontal',
     left: 'center',
-    data: ['Evaporation', 'Precipitation','Temperature'],
+    data: ['城乡人口比例', '城镇人口数','乡村人口数'],
     textStyle: {
         color: '#fff'
     }
@@ -36,30 +39,30 @@ option = {
         }
       },
       // prettier-ignore
-      data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      data: [1953, 1964, 1982, 1990, 2000, 2010, 2020]
     }
   ],
   yAxis: [
     {
       splitLine: {show: false},
       type: 'value',
-      name: 'Evaporation',
+      name: '人口比例',
       position: 'right',
       alignTicks: false,
       axisLine: {
         show: true,
         lineStyle: {
-          color: colors[0]
+          color: '#09eb27'
         }
       },
       axisLabel: {
-        formatter: '{value} ml'
+        formatter: '{value} '
       }
     },
     {
       splitLine: {show: false},
       type: 'value',
-      name: '温度',
+      name: '人口数',
       position: 'left',
       alignTicks: false,
       axisLine: {
@@ -69,31 +72,37 @@ option = {
         }
       },
       axisLabel: {
-        formatter: '{value} °C'
+        formatter: '{value}'
       }
     }
   ],
   series: [
     {
-      name: 'Evaporation',
-      type: 'bar',
-      data: [
-        2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
-      ]
-    },
-    {
-      name: 'Precipitation',
-      type: 'bar',
-      yAxisIndex: 1,
-      data: [
-        2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
-      ]
-    },
-    {
-      name: 'Temperature',
+      name: '城乡人口比例',
       type: 'line',
+      color: 'green',
+      lineStyle: {
+        color: '#09eb27'
+      },
+      data: [
+        0.15, 0.22, 0.26, 0.36, 0.57, 0.99, 1.77
+      ]
+    },
+    {
+      name: '城镇人口数',
       yAxisIndex: 1,
-      data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+      type: 'bar',
+      data: [
+        7726, 12710, 21082, 29971, 45844, 66557, 90199
+      ]
+    },
+    {
+      name: '乡村人口数',
+      yAxisIndex: 1,
+      type: 'bar',
+      data: [
+        50534, 50979, 56748, 67419, 79736, 80739, 83397
+      ]
     }
   ]
 };
