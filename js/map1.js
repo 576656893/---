@@ -292,7 +292,10 @@ var option = {
         label: {
             emphasis: {
                 // 鼠标触发显示地区名称
-                show: true
+                show: true,
+                textStyle: {
+                    color: 'grey'
+                }
             }
         },
         roam: false,
@@ -304,7 +307,7 @@ var option = {
             },
             emphasis: {
                 // 鼠标经过时地区的颜色
-                areaColor: '#293fff'
+                areaColor: '#293fff',
             }
         }
     },

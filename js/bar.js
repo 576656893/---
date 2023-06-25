@@ -1,5 +1,5 @@
-var chartDom = document.querySelector('.bar .chart');
-var myChart = echarts.init(chartDom);
+var chartDom_line = document.querySelector('.bar .chart');
+var myChart = echarts.init(chartDom_line);
 var option;
 
 const colors = ['#5470C6', '#EE6666'];

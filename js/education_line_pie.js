@@ -1,9 +1,9 @@
 var chartDom1 = document.getElementById('pie');
 var myChart1 = echarts.init(chartDom1);
-var option;
+var option1;
 
 setTimeout(function () {
-  option = {
+  option1 = {
     legend: {
         textStyle: {
             color: '#fff'
@@ -118,7 +118,7 @@ setTimeout(function () {
       });
     }
   });
-  myChart1.setOption(option);
+  myChart1.setOption(option1);
 });
 
-option && myChart1.setOption(option);
+option1 && myChart1.setOption(option1);

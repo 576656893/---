@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  background: url(../images/bg.jpg) no-repeat top center;
+  background: url(../images/bg.jpg) top center;
+  background-size: 100%;
   line-height: 1.15;
 }
 body header {
@@ -70,7 +71,7 @@ body .mainbox .column .panel {
   border: 0px solid rgba(25, 186, 139, 0.17);
   background: url(../images/line\(1\).png);
   padding: 0 0.1rem 0.1rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 body .mainbox .column .panel h2 {
   line-height: 30px;
@@ -90,6 +91,10 @@ body .mainbox .column .panel #pie {
 body .mainbox .column #map1 {
   height: 800px;
   width: 800px;
+}
+body .mainbox .column #line {
+  height: 330px;
+  width: 500px;
 }
 body .mainbox :nth-child(2) {
   flex: 5;
