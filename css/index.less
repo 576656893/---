@@ -6,8 +6,9 @@
     box-sizing: border-box;
 }
 body {
+    font-family: "微软雅黑";
     background: url(../images/bg.jpg) top center;
-    background-size:100%;
+    background-size:cover;
     line-height: 1.15;
     header {
         position: relative;
@@ -29,6 +30,14 @@ body {
             font-size: .25rem;
             color: #fff;
         }
+    }
+    .canvas{
+        position: absolute; 
+        width:100%; 
+        left: 0; 
+        top: 0; 
+        height: 99%; 
+        z-index: 1;
     }
     .loading {
         position: fixed;
@@ -61,13 +70,27 @@ body {
         height: 6.25rem;
         padding: .125rem .125rem 0;
         .column {
+            .alltitle{ font-size:.2rem; color:#fff; text-align: center; line-height: .5rem;}
             position: relative;
             flex: 3;
+            .map1,.map2,.map3{ position:absolute; opacity: .5}
+            .map1{ width:5rem; z-index: 2;top:.45rem; left: .7rem;  animation: myfirst2 8s infinite linear;}
+            .map2{ width:5rem; top:.85rem; left:1.2rem; z-index: 3; opacity: 0.2; animation: myfirst 8s infinite linear;}
+            .map3{ width:5rem; top:2rem; left: 1.4rem; z-index: 1;}
             .panel {
-                border: 0px solid rgba(25, 186, 139, 0.17);
+                position: relative;
+                border: 1px solid rgba(25, 186, 139, 0.17);
                 background: url(../images/line\(1\).png);
-                padding: 0 .1rem .1rem;
+                background-size: 100% auto;
                 margin-bottom: .5rem;
+                z-index: 10;
+
+                &:before,&:after { position:absolute; width: .1rem; height: .1rem; content: "";  border-top: 2px solid #02a6b5; top: 0;}
+                &:before,.boxfoot:before{border-left: 2px solid #02a6b5;left: 0;}
+                &:after,.boxfoot:after{border-right: 2px solid #02a6b5; right: 0;}
+                .boxfoot{ position:absolute; bottom: 0; width: 100%; left: 0;}
+                .boxfoot:before,
+                .boxfoot:after{ position:absolute; width: .1rem; height: .1rem;  content: "";border-bottom: 2px solid #02a6b5; bottom: 0;}
     
                 h2 {
                     line-height: 30px;
@@ -88,6 +111,7 @@ body {
             #map1 {
                 height: 800px;
                 width: 800px;
+                z-index: 10;
             }
             #line {
                 height: 330px;
@@ -99,3 +123,23 @@ body {
         }
     }
 }
+
+@keyframes myfirst2
+{
+from {transform: rotate(0deg);}
+to {transform: rotate(359deg);}
+}
+
+@keyframes myfirst
+{
+from {transform: rotate(0deg);}
+to {transform: rotate(-359deg);}
+}
+
+/*谷哥滚动条样式*/
+
+::-webkit-scrollbar {width:5px;height:5px;position:absolute}
+::-webkit-scrollbar-thumb {background-color:#5bc0de}
+::-webkit-scrollbar-track {background-color:#ddd}
+
+/***/

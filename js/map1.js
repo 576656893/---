@@ -262,7 +262,7 @@ var option = {
     legend: {
         orient: 'horizontal',
         top: 'bottom',
-        left: 'right',
+        left: 'center',
         data: ['北京', '四川','海南'],
         textStyle: {
             color: '#fff'
